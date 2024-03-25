@@ -1,13 +1,13 @@
-const knex = require('knex')(require('../knexfile'));
 const router = require('express').Router();
+const gundamController = require('../controllers/gundam-controller')
 
-router.get('/', async(_req, res) =>{
-    try{
-        const data = await knex('gundams');
-        res.status(200).json(data);
-    }catch(err){
-        res.status(400).send(`error, can't get gundams: ${err}`)
-    }
-});
+
+router
+.route('/')
+.get(gundamController.index)
+
+router
+.route('/:id')
+.get(gundamController.findOne)
 
 module.exports = router;
