@@ -1,0 +1,23 @@
+module.exports = [
+    {
+        id:1,
+        user_id:1,
+        gundam_id:7,
+        isCompleted:false,
+        isInProgress:false,
+    },
+    {
+        id:2,
+        user_id:1,
+        gundam_id:17,
+        isCompleted:true,
+        isInProgress:false,
+    },
+    {
+        id:3,
+        user_id:1,
+        gundam_id:22,
+        isCompleted:false,
+        isInProgress:true,
+    }
+]

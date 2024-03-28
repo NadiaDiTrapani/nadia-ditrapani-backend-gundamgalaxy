@@ -13,9 +13,11 @@ app.use(express.static("public"))
 const gundamRouter = require("./routes/gundam-routes");
 const userRouter = require('./routes/user-route')
 const wishlistRouter = require('./routes/wishlist-route')
+const ownedRouter = require('./routes/owned-route')
 
 app.use('/gundams', gundamRouter);
 app.use('/users', userRouter);
 app.use('/wishlist', wishlistRouter)
+app.use('/owned', ownedRouter)
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
