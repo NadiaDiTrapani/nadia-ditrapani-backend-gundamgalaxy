@@ -83,7 +83,7 @@ module.exports = [
     },
     {
         id: 10,
-        name: " HGUC RX-0 UNICORN GUNDAM (DESTROY MODE)",
+        name: "HGUC RX-0 UNICORN GUNDAM (DESTROY MODE)",
         series: "Mobile Suit Gundam Unicorn",
         grade: 'High Grade',
         brand: "Bandia",
@@ -191,7 +191,7 @@ module.exports = [
     },
     {
         id: 22,
-        name: " PG RX-178 GUNDAM MK-II AEUG",
+        name: "PG RX-178 GUNDAM MK-II AEUG",
         series: "Mobile Suit Zeta Gundam",
         grade: 'Perfect Grade',
         brand: "Bandia",

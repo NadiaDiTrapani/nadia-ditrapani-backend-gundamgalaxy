@@ -30,12 +30,6 @@ exports.up = function(knex) {
         table.boolean('isCompleted').defaultTo(false);
         table.boolean('isInProgress').defaultTo(false);
     })
-    .createTable('wishlist', (table) => {
-        table.increments('id').primary();
-        table.integer('user_id').unsigned().references('user.id').onUpdate('CASCADE').onDelete('CASCADE');
-        table.integer('gundam_id').unsigned().references('gundams.id').onUpdate('CASCADE').onDelete('CASCADE');
-        table.timestamp('created_at').defaultTo(knex.fn.now());
-    });
 };
 
 /**
@@ -44,7 +38,6 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema
-    .dropTable('wishlist')
     .dropTable('owned')
     .dropTable('user')
     .dropTable('gundams');

@@ -16,6 +16,13 @@ module.exports = [
     {
         id:3,
         user_id:1,
+        gundam_id:12,
+        isCompleted:false,
+        isInProgress:true,
+    },
+    {
+        id:4,
+        user_id:1,
         gundam_id:22,
         isCompleted:false,
         isInProgress:true,
