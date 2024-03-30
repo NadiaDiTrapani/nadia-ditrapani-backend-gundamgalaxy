@@ -15,23 +15,7 @@ const index = async (req, res) =>{
     }
 }
 
-// const add = async (req, res) => {
-//     try {
-//         // Insert data into the wishlist table and retrieve the ID of the newly added entry
-//         const [newWishlistId] = await knex('wishlist').insert(req.body);
 
-//         // Fetch the newly added entry directly using the ID returned from the insert operation
-//         const createdEntry = await knex('wishlist').where({ id: newWishlistId }).first();
-
-//         // Return the newly created entry in the response
-//         res.status(201).json(createdEntry);
-//     } catch (err) {
-//         // Handle any errors that occur during the insertion process
-//         res.status(500).json({
-//             message: `Unable to add gundam: ${err}`
-//         });
-//     }
-// }
 async function addToWishlist(req, res) {
     try {
         const { gundam_id, user_id } = req.body;
@@ -68,10 +52,6 @@ const remove = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
-
-
-
-
 
 module.exports = {
     index,
