@@ -15,7 +15,6 @@ const index = async (req, res) =>{
     }
 }
 
-
 async function addToWishlist(req, res) {
     try {
         const { gundam_id, user_id } = req.body;
