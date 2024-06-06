@@ -7,5 +7,7 @@ router
 .post(wishlistController.addToWishlist)
 .delete(wishlistController.remove);
 
+router.post('/add', wishlistController.addToWishlist);
+
 
 module.exports = router;
