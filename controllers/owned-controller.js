@@ -32,16 +32,17 @@ const addToOwned = async (req, res) => {
     try {
         const { gundam_id, user_id } = req.body;
 
-        const existingBoughtEntry = await knex('owned')
-            .where({ gundam_id, user_id })
-            .first();
+        if (!gundam_id || !user_id) {
+            return res.status(400).json({ message: 'Gundam ID and User ID are required' });
+        }
+
+        const existingBoughtEntry = await knex('owned').where({ gundam_id, user_id }).first();
 
         if (existingBoughtEntry) {
             return res.status(400).json({ message: 'Gundam already exists in Bought' });
         }
 
         await knex('owned').insert({ gundam_id, user_id });
-
         res.status(201).json({ message: 'Gundam added to Bought List successfully' });
     } catch (error) {
         console.error('Error adding gundam to Bought List:', error);
